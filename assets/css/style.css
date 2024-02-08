@@ -22,8 +22,9 @@ header {
 .title {
     margin-left: 1%;
     position: relative;
-    top:0px;
+    top: 0px;
 }
+
 
 /* main */
 
@@ -50,9 +51,47 @@ h3 {
     padding-top: 10px;
 }
 
+article {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.link {
+    color: white;
+    background-color: brown;
+    border: none;
+    border-radius: 15px;
+    text-decoration: none;
+    width: 75%;
+    margin-left: 13%;
+    height: 35px;
+    margin-top: 8%;
+}
+
+p {
+    display: inline;
+    vertical-align: middle;
+}
+
+.rom-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.sonicimg {
+    width: 38%;
+}
+
+.pkmredimg {
+    width: 55%;
+}
+
+.mkdsimg {
+    width: 63%;
+}
 /* footer */
 
 footer {
     background-color: #b50000;
-    height:75px;
+    height: 75px;
 }
