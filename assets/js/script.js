@@ -1,43 +1,47 @@
-const articleData = {
+const game = [
+    {
     title: "Super Mario 64",
     imageSrc: "assets/image/sm64.jpg",
     console: "Nintendo 64",
     year: "1996",
     downloadLink: "assets/Roms/n64/Super Mario 64 (USA).zip"
-};
+},
+{
+    title: "Pokemon Red",
+    imageSrc: "assets/image/pokemonred.jpg",
+    console: "GameBoy",
+    year: "1996",
+    downloadLink: "assets/Roms/GB/Pokemon - Red Version (USA, Europe) (SGB Enhanced).zip"
+},
+];
 
-function afficherArticle(articleData) {
-    const articleElement = document.createElement("article");
+const innermain = document.querySelector(".innermain");
 
-    const titleElement = document.createElement("h3");
-    titleElement.textContent = articleData.title;
-    articleElement.appendChild(titleElement);
+function parcourirGame(game) {
+    for (let i = 0; i < game.length; i++) {
+        const currentGame = game[i];
 
-    const imageElement = document.createElement("img");
-    imageElement.src = articleData.imageSrc;
-    imageElement.alt = "Image de " + articleData.title;
-    articleElement.appendChild(imageElement);
+        const article = document.createElement("article");
+        const title = document.createElement("h2");
+        const img = document.createElement("img");
+        const console = document.createElement("p");
+        const year = document.createElement("p");
+        const link = document.createElement("a");
 
-    const infoElement = document.createElement("p");
-    infoElement.classList.add("info");
-    infoElement.textContent = `${articleData.console}, ${articleData.year}`;
-    articleElement.appendChild(infoElement);
+        img.src = currentGame.imageSrc;
+        img.classList.add("game-img")
+        link.classList.add("link");
 
-    const downloadLinkElement = document.createElement("a");
-    downloadLinkElement.href = articleData.downloadLink;
+        innermain.appendChild(article);
+        article.appendChild(title);
+        article.appendChild(img);
+        article.appendChild(console);
+        article.appendChild(year);
+        article.appendChild(link);
 
-    const linkDivElement = document.createElement("div");
-    linkDivElement.classList.add("link");
-
-    const downloadTextElement = document.createElement("p");
-    downloadTextElement.textContent = "Download";
-    linkDivElement.appendChild(downloadTextElement);
-
-    downloadLinkElement.appendChild(linkDivElement);
-    articleElement.appendChild(downloadLinkElement);
-
-    const innerMainDiv = document.querySelector(".innermain");
-    innerMainDiv.appendChild(articleElement);
+        title.textContent = currentGame.title;
+        console.textContent = currentGame.console
+    }
 }
 
-afficherArticle(articleData);
+parcourirGame(game);
